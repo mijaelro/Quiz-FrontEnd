@@ -1,0 +1,92 @@
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+}
+.myButton {
+	box-shadow:inset 0px 1px 0px 0px #3ce612;
+	background-color:#348f4c;
+	border:1px solid #142216;
+  border-radius:6px;
+	display:inline-block;
+	cursor:pointer;
+	color:#1a1919;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	text-decoration:none;
+    text-align: center;
+    width:150px;
+    height:50px;
+    font-size:30px;
+	text-shadow:0px 1px 0px #2f6627;
+}
+.myButton:hover {
+	background-color:#5cbf2a;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+
+.myButton2{
+  box-shadow:inset 0px 1px 0px 0px rgba(255, 255, 0, 0.575);
+	background-color:gold;
+  border:1px solid #142216;
+	text-shadow:0px 1px 0px #9ca70f;
+  border-radius:6px;
+	display:inline-block;
+	cursor:pointer;
+	color:#1a1919;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	text-decoration:none;
+    text-align: center;
+    width:150px;
+    height:50px;
+    font-size:30px;
+
+}
+
+
+.myButton2:hover {
+	background-color:rgb(255, 153, 0);
+}
+
+.myButton3{
+  box-shadow:inset 0px 1px 0px 0px orangered;
+	background-color:#b45e0e;
+  border:1px solid #142216;
+	text-shadow:0px 1px 0px #cc5c01;
+  border-radius:6px;
+	display:inline-block;
+	cursor:pointer;
+	color:#1a1919;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	/* padding:6px 24px; */
+	text-decoration:none;
+    text-align: center;
+    width:150px;
+    height:50px;
+    font-size:30px;
+}
+
+.myButton3:hover{
+	background-color:rgb(255, 17, 0);
+}

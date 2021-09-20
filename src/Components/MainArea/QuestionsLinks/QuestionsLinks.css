@@ -1,0 +1,54 @@
+.QuestionsLinks {
+    display: inline-block;
+    text-align: center;
+	width: 50%;  margin:50px;
+}
+
+
+.QuestionsLinks table {
+    margin: auto;
+    border-collapse: collapse;
+    width:100%;
+}
+
+.QuestionsLinks table,th,td {
+  border: 1px solid black;
+  padding:10px
+}
+
+/* .QuestionsLinks tr:nth-child(even) {
+  background-color: white;
+}
+
+.QuestionsLinks tr:nth-child(odd) {
+  background-color: #ddd;
+} */
+
+.QuestionsLinks th {
+  background-color: #0e212e;
+  color: white;
+  
+}
+  
+.QuestionsLinks td {
+  color: black;
+  margin:60px;
+}
+
+.QuestionsLinks #java{
+    background-color: darkred;
+}
+
+.QuestionsLinks #spring{
+    background-color: rgb(69, 180, 47);
+}
+
+.QuestionsLinks a{
+    color: rgb(117, 94, 94);
+    text-decoration: none;
+    font-weight: bold;
+    }
+
+    .QuestionsLinks #idLinks{
+        background-color: rgb(64, 66, 64);
+    }
