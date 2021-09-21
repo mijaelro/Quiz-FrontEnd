@@ -1,0 +1,76 @@
+.SendIdeas{
+    text-align: center;
+}
+
+.customCont{
+    margin-bottom: 20px;
+    padding: 5px ;
+    font-size: 20px;
+    width: 30%;
+    display:inline-block;
+    text-align: center;
+    background-color: rgba(128, 128, 128, 0.575);
+}
+
+.col-8{
+    margin:10px
+}
+
+input[type=text] {
+    width: auto;
+    margin-bottom: 2px;
+    padding: 2px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+  
+label {
+    margin: 5px;
+}
+ 
+.btn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    width: auto;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 17px;
+}
+  
+.btn:hover {
+    background-color: #45a049;
+}
+  
+#errors{
+font-size: 10px;
+color: red;
+font-weight: bold;
+}
+
+#btnnn{
+    cursor:pointer;
+    width: 55px;
+    font-size: 20px;
+    border:1px solid darkgreen;
+}
+
+#btnnn:hover{
+   background-color:rgb(9, 9, 100);
+   color:white;
+   border:1px solid silver;
+
+}
+
+@media only screen and (max-width:500px) {
+       .customCont{
+           width:90%;
+           font-size:12px;
+       }
+
+       #niceTitle{
+        font-size: 40px;
+        }
+}

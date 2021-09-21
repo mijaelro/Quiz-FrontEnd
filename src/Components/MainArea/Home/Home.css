@@ -1,12 +1,11 @@
 .Home {
     margin: 40px
 }
+
 .Home h1{
     color:white;
     font-size: 6rem;
     margin: 0px;
-
-    /* margin: 40px; */
 }
 
 .Home h3{
@@ -17,10 +16,39 @@
 
 .infoo{
     display:inline-block;
-    width:80%;
+    width:60%;
 }
 
 .infooPlay{
     margin:80px
 }
 
+#click{
+    color: rgb(14, 233, 14);
+    font-weight:bold;
+    font-size: 12px;
+}
+
+@media only screen and (max-width:800px) {
+    .Home {
+      width:80%;
+      font-size: 15px;
+    } 
+}
+
+@media only screen and (max-width:500px) {
+        .Home {
+            width:80%;
+            font-size: 10px;
+          } 
+          .Home h1 {
+            font-size: 50px;
+          } 
+
+          .Home h3 {
+            font-size: 10px;
+          }
+            #click {
+            font-size: 7px;
+    } 
+}

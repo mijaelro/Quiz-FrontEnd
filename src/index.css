@@ -15,11 +15,11 @@ html, body, #root {
   -moz-osx-font-smoothing: grayscale;
   
 }
+
 .myButton {
-	box-shadow:inset 0px 1px 0px 0px #3ce612;
 	background-color:#348f4c;
-	border:1px solid #142216;
-  border-radius:6px;
+	border:2px solid #03ff28;
+  	border-radius:60px;
 	display:inline-block;
 	cursor:pointer;
 	color:#1a1919;
@@ -27,66 +27,232 @@ html, body, #root {
 	font-size:15px;
 	font-weight:bold;
 	text-decoration:none;
-    text-align: center;
-    width:150px;
-    height:50px;
-    font-size:30px;
 	text-shadow:0px 1px 0px #2f6627;
-}
-.myButton:hover {
-	background-color:#5cbf2a;
-}
-.myButton:active {
-	position:relative;
-	top:1px;
+    text-align: center;
+    width:120px;
+    height:95px;
+    font-size:30px;
+	transition: 0.5s ease;
+	animation: blob 6s linear infinite alternate;
 }
 
+.myButton:hover {
+	background-color:#205e02;
+	color:white;
+	animation: blob 4s linear infinite alternate;
+
+}
 
 .myButton2{
-  box-shadow:inset 0px 1px 0px 0px rgba(255, 255, 0, 0.575);
+    box-shadow:inset 0px 1px 0px 0px rgba(255, 255, 0, 0.575);
 	background-color:gold;
-  border:1px solid #142216;
+    border:2px solid #bb5b02;
 	text-shadow:0px 1px 0px #9ca70f;
-  border-radius:6px;
+    border-radius:6px;
 	display:inline-block;
 	cursor:pointer;
 	color:#1a1919;
 	font-family:Arial;
-	font-size:15px;
 	font-weight:bold;
 	text-decoration:none;
     text-align: center;
-    width:150px;
-    height:50px;
+	width:140px;
+    height:95px;
     font-size:30px;
-
+	transition: 0.5s ease;
+	animation: blob 6s linear infinite alternate;
 }
 
-
 .myButton2:hover {
-	background-color:rgb(255, 153, 0);
+	background-color:rgb(255, 123, 0);
+	color:white;
+	animation: blob 2s linear infinite alternate;
 }
 
 .myButton3{
-  box-shadow:inset 0px 1px 0px 0px orangered;
-	background-color:#b45e0e;
-  border:1px solid #142216;
+    box-shadow:inset 0px 1px 0px 0px rgb(255, 38, 0);
+	background-color:#b42f0e;
+    border:2px solid #ff0000;
 	text-shadow:0px 1px 0px #cc5c01;
-  border-radius:6px;
+    border-radius:6px;
 	display:inline-block;
 	cursor:pointer;
 	color:#1a1919;
 	font-family:Arial;
 	font-size:15px;
 	font-weight:bold;
-	/* padding:6px 24px; */
 	text-decoration:none;
     text-align: center;
-    width:150px;
-    height:50px;
+    width:120px;
+    height:95px;
     font-size:30px;
+	transition: 0.5s ease;
+	animation: blob 6s linear infinite alternate;
 }
 
 .myButton3:hover{
-	background-color:rgb(255, 17, 0);
+	background-color:rgb(170, 14, 3);
+	color:white;
+	animation: blob 1s linear infinite alternate;
+}
+
+.next{
+	margin:10px;
+	padding: 5px 5px;
+	background-color: #066129;
+	color: white;
+	font-weight: bold;
+	border-radius:6px;
+}
+
+.next:hover{
+	background-color: #ddd;
+	color: black;
+	cursor: pointer;
+}
+
+#niceTitle{
+    text-shadow: 2px 2px 0 #40b554, 2px -2px 0 #65b540,
+     -2px 2px 0 #40b550, -2px -2px 0 #6bb540, 2px 0px 0 #318b07, 0px 2px 0 #1c8307,
+     -2px 0px 0 #44b540, 0px -2px 0 #65b540, 2px 2px 0px rgba(47,206,0,0);
+     font-size: 60px;
+     margin:0px;
+}
+
+#niceTitle2{
+	color: white;
+     font-size: 20px;
+     margin:10px;
+
+}
+
+.number{
+	background-color :#e6ff06;
+	color:black;
+	padding: 2px;
+	border:2px solid #45084d;
+	display:inline-block;
+}
+
+.question{
+	background-color :#45084d;
+	color:#e7ebe6;
+	border:2px solid darkgreen;
+	padding: 6px;
+	font-weight: bold;
+}
+
+#finalScore{
+	margin-top: 50px;
+	color:#e68312;
+	font-weight: bold;
+	font-size:40px;
+}
+
+#reddish{
+	color:red;
+}
+
+.bluring{
+	background:rgba(27, 27, 27, 0.7) none no-repeat scroll 0 0;
+}
+
+.Wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Wrapper > p {
+    color: rgb(255, 251, 255);
+}
+
+.score {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin:0px;
+}
+
+.Wrapper h1 {
+    text-shadow: 1px 3px 0 #106604, 1px 13px 5px #2c5f02, 2px 2px 3px #2FCE00;
+    color: #d48cffc7;
+    font-size: 50px;
+    text-align: center;
+    font-weight: bold;
+    margin: 10px;
+}
+
+#span1{
+    margin:0px;
+    color: #0ba820;
+    font-size: 30px;
+	font-weight: bold;
+
+}
+
+#span2{
+  margin:0px;
+  color: #ffcc26;
+  font-size: 30px;
+  font-weight: bold;
+
+}
+
+#span3{
+  margin:0px;
+  color: #be3d3d;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.start {
+margin-top:100px  
+}
+
+#span11{
+  color: rgb(214, 140, 236);
+  font-size: 15px;
+  font-weight: bold; 
+}
+
+@keyframes blob {
+	0%,
+	100% {
+		border-radius: 77% 47% 61% 49%;
+	}
+
+	20% {
+		border-radius: 89% 26% 70% 30%;
+	}
+
+	40% {
+		border-radius: 56% 93% 56% 94%;
+	}
+
+	60% {
+		border-radius: 68% 60% 94% 96%;
+	}
+
+	80% {
+		border-radius: 34% 74% 59% 82%;
+	}
+}
+
+@media only screen and (max-width:800px) {
+   
+	#myButton3,#myButton,#myButton2{
+		width:140px;
+		height:95px;
+		font-size:30px;
+	}
+   
+}
+  @media only screen and (max-width:500px) {
+    .myButton3 ,.myButton,.myButton2{
+		width:80px;
+    height:65px;
+    font-size:15px;
+	margin: 10px;
+	margin-top: 80px;
+	} 
 }

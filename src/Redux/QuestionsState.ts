@@ -9,7 +9,6 @@ export enum QuestionsActionType {
     QuestionAdded = "QuestionAdded",
     QuestionUpdated = "QuestionUpdated",
     QuestionDeleted = "QuestionDeleted",
-    // QuestionsCleared = "ExpensesCleared"
 };
 
 export interface QuestionAction {
@@ -33,10 +32,6 @@ export function QuestionDeletedAction(id:number): QuestionAction {
     return { type: QuestionsActionType.QuestionDeleted, payload: id };
 };
 
-// export function ExpensesClearedAction():ExpenseAction{
-//     return {type:ExpensesActionType.ExpensesCleared}
-// }
-
 export function questionsReducer(currentState: QuestionsState = new QuestionsState(),action:QuestionAction): QuestionsState{
     
     const newState = {...currentState}; 
@@ -59,9 +54,6 @@ export function questionsReducer(currentState: QuestionsState = new QuestionsSta
             newState.questions = newState.questions.filter(c=>c.id !== action.payload);
             break;
             
-        // case ExpensesActionType.ExpensesCleared:
-        //         newState.expenses = newState.expenses=[];
-        //         break;
     };
 
     return newState;

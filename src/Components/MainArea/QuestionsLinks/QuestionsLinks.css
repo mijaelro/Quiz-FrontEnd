@@ -1,54 +1,69 @@
 .QuestionsLinks {
     display: inline-block;
     text-align: center;
-	width: 50%;  margin:50px;
+    margin:-10px;
+    width: 80%;
 }
-
 
 .QuestionsLinks table {
     margin: auto;
     border-collapse: collapse;
-    width:100%;
+	  width: 35%; 
 }
 
 .QuestionsLinks table,th,td {
   border: 1px solid black;
-  padding:10px
+  padding:4px;
 }
-
-/* .QuestionsLinks tr:nth-child(even) {
-  background-color: white;
-}
-
-.QuestionsLinks tr:nth-child(odd) {
-  background-color: #ddd;
-} */
 
 .QuestionsLinks th {
-  background-color: #0e212e;
+  background-color: #0b022ca4;
   color: white;
-  
 }
   
 .QuestionsLinks td {
   color: black;
-  margin:60px;
+  font-weight: bold;
 }
 
 .QuestionsLinks #java{
-    background-color: darkred;
+    background-color: rgba(199, 116, 116, 0.692); 
 }
 
 .QuestionsLinks #spring{
-    background-color: rgb(69, 180, 47);
+    background-color: rgba(100, 146, 89, 0.733);
+}
+
+.QuestionsLinks #web{
+  background-color: rgba(126, 136, 172, 0.74);
 }
 
 .QuestionsLinks a{
-    color: rgb(117, 94, 94);
+    color: rgb(2, 2, 2);
     text-decoration: none;
     font-weight: bold;
-    }
+}
 
-    .QuestionsLinks #idLinks{
-        background-color: rgb(64, 66, 64);
-    }
+.QuestionsLinks #idLinks:hover{
+    background-color: rgb(11, 62, 104);
+    color: white;
+}
+
+.QuestionsLinks #idLinks a:hover{
+  background-color: rgb(11, 62, 104);
+  color: white;
+}
+
+@media only screen and (max-width:800px) {
+  .QuestionsLinks table {
+    font-size: 15px;
+    width:80%
+  }   
+}
+
+@media only screen and (max-width:500px) {
+    .QuestionsLinks table {
+	    font-size: 10px;
+      width:80%
+	  } 
+}

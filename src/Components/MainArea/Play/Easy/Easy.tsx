@@ -1,37 +1,31 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { QuestionsDownloadedAction } from "../../../../Redux/QuestionsState";
 import store from "../../../../Redux/store";
 import globals from "../../../../Services/globals";
-import tokenAxios from "../../../../Services/InterceptorAxios";
 import EmptyView from "../../../SharedArea/EmptyView/EmptyView";
-import "./Easy.css";
 import {shuffleArray} from '../../../Utils/ShuffleArrayUtil'
-import { GlobalStyle, Wrapper } from "./Easy.styles";
 import QuestionCard from "../../QuestionCard/QuestionsCard";
 import QuestionModel from "../../../../Models/QuestionModel";
+import "./Easy.css";
 
 export type AnswerObject = {
     question: string;
     answer: string;
     correct: boolean;
     correctAnswer: string;
-  };
+};
 
   const TOTAL_QUESTIONS = 25; 
 
 function Easy(): JSX.Element {
     const[questions,setQuestions] = useState(store.getState().questionsState.questions);
-    const[count,setCount]= useState(store.getState().questionsState.questions.length);
     const [loading, setLoading] = useState(false);
     const [number, setNumber] = useState(0);
     const [userAnswers, setUserAnswers] = useState<AnswerObject[]>([]);
     const [score, setScore] = useState(0);
     const [gameOver, setGameOver] = useState(true);
-    const[user,setUser]= useState(store.getState().authState.client);
-    const[finalScore,setFinalScore] = useState(user?.scores);
-    const[userHighestScore,setUserHighestScore] = useState(user?.highestScore);
-    const[levelHighestScores,setLevelHighestScores]=useState([]);
+    const[finalScore,setFinalScore] = useState(0);
 
     const fetchQuestionsEasy = async()=>{
         setLoading(true);
@@ -40,107 +34,94 @@ function Easy(): JSX.Element {
             store.dispatch(QuestionsDownloadedAction(response.data));
             setQuestions(shuffleArray(response.data));
             setScore(0);
+            setFinalScore(0);
             setUserAnswers([]);
             setNumber(0);
             setLoading(false);
-            // notify.success(SccMsg.DOWNLOADED_TODOS);
-            // console.log(response.data);
-            // return response.data;
-        // }else{
-            // return alert("error")
-            // re/turn 0; 
-            // };
-        // };
     };
 
-const checkAnswer=(e:any)=>{
-    if (!gameOver) {
-        // User's answer
-        const answer = e.currentTarget.value;
-        // Check answer against correct answer
-        const correct = questions[number]?.answer === answer;
-        // Add score if answer is correct
-        if (correct) setScore((prev) => prev + 1);
-        // Save the answer in the array for user answers
-        const answerObject = {
-          question: questions[number]?.question,
-          answer,
-          correct,
-          correctAnswer: questions[number]?.answer,
-        };
-        setUserAnswers((prev) => [...prev, answerObject]);
+  const checkAnswer=(e:any)=>{
+      if (!gameOver) {
+          const answer = e.currentTarget.value;
+          const correct = questions[number]?.answer === answer;
+          if (correct) setScore((prev) => prev + 1);
+          
+          const answerObject = {
+            question: questions[number]?.question,
+            answer,
+            correct,
+            correctAnswer: questions[number]?.answer,
+          };
+          setUserAnswers((prev) => [...prev, answerObject]);
+        }
+  };
+
+
+  const nextQuestion=()=>{
+  const nextQ = number+1;
+
+      if (nextQ === TOTAL_QUESTIONS) {
+        setGameOver(true);
+        setFinalScore(score);
+
+      } else {
+        setNumber(nextQ);
       }
-};
+  }
 
-
-const nextQuestion=()=>{
-// Move on to the next question if not the last question
-const nextQ = number+1;
-
-if (nextQ === TOTAL_QUESTIONS) {
-  setGameOver(true);
-  //check if it works and do a function to get the array ordered by highest and display the top 3 in eacch level
-  levelHighestScores.push(score);
-  //check if this works
-  finalScore.push(score);
-  //check if this works
-  score>userHighestScore&&setUserHighestScore(score);
-  
-} else {
-  setNumber(nextQ);
-}
-}
-
-// useEffect(() => {
-    // if(!user&&history.push("/login"))
-    // try{
-    //     fetchQuestionsEasy();
-
-    // }
-    // catch(err){
-    //     alert(err);
-
-    // }
-//     const unsubscribe = store.subscribe(() => {
-//         setQuestions(store.getState().questionsState.questions);
-//     })
-//     return unsubscribe; 
-// })
 
     return (
         <div className ="Easy">
-      <div className="Wrapper">
-        <h1>FULLSTACK QUIZ</h1>
-        <span id="span1">(Easy)</span>
-        <div></div>
-        {gameOver || userAnswers.length === TOTAL_QUESTIONS ? (
+          <div className="Wrapper">
+            {gameOver &&finalScore===0 ? (
+             <>
+             <h1>FULLSTACK QUIZ</h1>
+             <span id="span1">(Easy-25)</span>
+             <span id="span11">click play to get started!</span>
+              <button className='myButton start' onClick={fetchQuestionsEasy}>
+              ▶
+              </button>
+             </>
+            ) : null}
+      
+        {gameOver&&finalScore!==0&&(
+        <>
+        <div className="bluring"><span id="finalScore">Your final is score is <br /><span id="reddish">{score}/25</span>  <br /> Try again!</span></div>
           <button className='myButton start' onClick={fetchQuestionsEasy}>
-            ▶
+           retry
           </button>
-        ) : null}
+        </>
+        )}
+
+        {loading&&
+          <div>
+            <EmptyView msg="Loading questions.."/>
+          </div>
+        }
+        
         {!gameOver ? <p className='score'>Score: {score}</p> : null}
-        {loading ? <p>Loading Questions...</p> : null}
+        
         {!loading && !gameOver && (
 
                     <QuestionCard 
-                            question={questions[number]?.question}
-                            userAnswer={userAnswers ? userAnswers[number] : undefined}
-                            questionNr={number+1} 
-                            totalQuestions={TOTAL_QUESTIONS}
-                            answers={shuffleArray(questions[number]?.options)}
-                            callback={checkAnswer}/>
-               
-                        
-                        
-               
-            
-                     )}      
-         
-            {!gameOver && !loading && userAnswers.length === number +1 && number !== TOTAL_QUESTIONS  ? (
-          <button className='next' onClick={nextQuestion}>
-            Next Question
-          </button>
-        ) : null}
+                      question={questions[number]?.question}
+                      userAnswer={userAnswers ? userAnswers[number] : undefined}
+                      questionNr={number+1} 
+                      totalQuestions={TOTAL_QUESTIONS}
+                      answers={shuffleArray(questions[number]?.options)}
+                      callback={checkAnswer}/>
+                     )}    
+
+          {!gameOver && !loading && userAnswers.length === number +1 && number+1 !== TOTAL_QUESTIONS  ? (
+            <button className='next' onClick={nextQuestion}>
+              Next Question
+            </button>
+          ) :  !gameOver && !loading && number+1 == TOTAL_QUESTIONS 
+          ? ( <button className='next' onClick={nextQuestion}>
+                  Finish
+              </button>
+            ):null
+          } 
       </div>
     </div>
     );

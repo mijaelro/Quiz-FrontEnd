@@ -1,6 +1,89 @@
 .About {
-	background-color: salmon;
+    background:rgba(33, 116, 61, 0.664) none no-repeat scroll 0 0;
     width: 50%;
     display:inline-block;
     text-align: center;
+    border-radius: 10px;
+    border: 3px solid purple; 
+    padding: 20px;
+    font-family: system-ui;
+}
+
+.About p {
+    color: pink;
+}
+
+.About h4 {
+    color: rgb(243, 130, 1);
+    font-weight: bold;
+}
+
+#note{
+    color: rgb(184, 2, 2);
+    font-weight: bold;
+    padding-right: 10px;
+}
+
+#categ{
+    color: rgb(90, 6, 90);
+    font-weight: bold;
+    padding-right: 10px;
+}
+
+.myButton4{
+    box-shadow:inset 0px 1px 0px 0px rgb(72, 73, 7);
+	background-color:#b4a30e;
+    border:2px solid rgb(90, 6, 90);
+	text-shadow:0px 1px 0px #cc8501;
+    border-radius:6px;
+	/* display:inline-block; */
+	cursor:pointer;
+	color:#1a1919;
+	font-family:Arial;
+	font-weight:bold;
+	/* text-decoration:none; */
+    text-align: center;
+    width:100px;
+    height:55px;
+    font-size:14px;
+	transition: 0.5s ease;
+	animation: blob 6s linear infinite alternate;
+}
+
+.myButton4:hover{
+	background-color:rgb(50, 128, 13);
+	color:white;
+}
+
+.About h5{
+    font-family: cursive;
+    margin-bottom: 0px;
+    color:rgb(51, 3, 75)
+}
+
+.About a {
+    text-decoration: none;
+    color:rgb(50, 3, 73)
+}
+
+.About a:hover {
+    text-decoration: none;
+    color:rgb(155, 173, 57)
+}
+
+@media only screen and (max-width:800px) {
+    .About {
+      width:80%;
+      font-size: 15px;
+    } 
+     
+}
+
+@media only screen and (max-width:500px) {
+        .About {
+            width:80%;
+            font-size: 10px;
+            margin-top:30px;
+
+    } 
 }

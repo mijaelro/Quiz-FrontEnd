@@ -1,16 +1,12 @@
-.Header {
-	
-}
 #nav-wrap ul, #nav-wrap li, #nav-wrap a {
-    margin: 0;
-    padding: 0;
+    margin: 2px;
+    padding-right: 12px;
     border: none;
     outline: none;
 }
 
-/* nav-wrap */
 #nav-wrap {
-  font: 12px 'opensans-bold', sans-serif;
+  font: 17px 'opensans-bold', sans-serif;
   width: 100%;
   text-transform: uppercase;
   letter-spacing: 2.5px;
@@ -19,47 +15,44 @@
   position: fixed;
   left: 0;
   top: 0;
+  background:rgba(27, 27, 27, 0.6) none no-repeat scroll 0 0;
+
 }
-.opaque { background-color: #333; }
 
-/* hide toggle button */
-#nav-wrap > a.mobile-btn { display: none; }
-
-ul#nav {
-  min-height: 48px;
-  width: auto;
-
-  /* center align the menu */
-  text-align: center;
-}
 ul#nav li {
   position: relative;
   list-style: none;
   height: 48px;
   display: inline-block;
-  /* background:rgba(27, 27, 27, 0.5) none no-repeat scroll 0 0; */
 }
 
-/* Links */
-ul#nav li .smoothscroll {
-
-/* 8px padding top + 8px padding bottom + 32px line-height = 48px */
-
+.smoothscroll {
   display: inline-block;
-  padding: 8px 13px;
+  padding: 0px 18px;
   line-height: 32px;
-   text-decoration: none;
-  text-align: left;
-  color: #fff;
+  text-decoration: none;
   font-weight: bold;
-
-   -webkit-transition: color .2s ease-in-out;
-   -moz-transition: color .2s ease-in-out;
-   -o-transition: color .2s ease-in-out;
-   -ms-transition: color .2s ease-in-out;
-   transition: color .2s ease-in-out;
+  color: rgb(0, 250, 0) ;
 }
 
-ul#nav li .smoothscroll:active { background-color: transparent !important; }
-ul#nav li.current .smoothscroll  { color: rgb(0, 250, 0); }
+.active {
+  color: rgb(149, 177, 140);
+}
 
+ul#nav li .smoothscroll:hover { 
+  background-color: rgb(150, 201, 152) !important; 
+  color: black !important;
+ }
+
+@media only screen and (max-width:500px) {
+
+    #nav-wrap {
+      max-width: 100%;
+      font-size: 7px;
+      padding-right: 0px;
+      position: inherit;
+    }
+    #nav-wrap ul, #nav-wrap li, #nav-wrap a{
+      padding:2%;
+    }
+}
